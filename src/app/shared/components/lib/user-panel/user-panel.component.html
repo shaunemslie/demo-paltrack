@@ -1,0 +1,29 @@
+<div class="user-panel">
+  <div class="user-info">
+    <div class="image-container">
+      <img
+        class="user-avatar"
+        [src]="'https://www.gravatar.com/wavatar/' + user?.md5"
+      />
+    </div>
+    <div class="user-name">{{ user?.email }}</div>
+  </div>
+  <dx-context-menu
+    *ngIf="menuMode === 'context'"
+    [items]="menuItems"
+    target=".user-button"
+    showEvent="dxclick"
+    [position]="{
+      my: 'top',
+      at: 'bottom'
+    }"
+    cssClass="user-menu"
+  >
+  </dx-context-menu>
+  <dx-list
+    *ngIf="menuMode === 'list'"
+    class="dx-toolbar-menu-action"
+    [items]="menuItems"
+  >
+  </dx-list>
+</div>

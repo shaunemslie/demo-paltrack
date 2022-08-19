@@ -1,0 +1,28 @@
+<h3 class="content-block">Flights</h3>
+
+<dx-data-grid
+  class="dx-card wide-card"
+  [dataSource]="flights"
+  [showBorders]="false"
+  [focusedRowEnabled]="true"
+  [focusedRowIndex]="0"
+  [columnAutoWidth]="true"
+  [columnHidingEnabled]="true"
+>
+  <dxo-paging [pageSize]="10"></dxo-paging>
+  <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+  <dxi-column dataField="icao24" caption="ICAO 24"> </dxi-column>
+  <dxi-column dataField="firstSeen" caption="Estimated Departure"> </dxi-column>
+  <dxi-column
+    dataField="estDepartureAirport"
+    caption="Estimated Departure Airport"
+  >
+  </dxi-column>
+  <dxi-column dataField="lastSeen" caption="Estimated Arrival"> </dxi-column>
+  <dxi-column dataField="estArrivalAirport" caption="Estimated Arrival Airport">
+  </dxi-column>
+  <dxi-column dataField="callsign" caption="Vehicle Callsign">
+  </dxi-column>
+</dx-data-grid>
